@@ -1,6 +1,6 @@
 # 重要tip
 - hadoop搭建部分，使用了[kiwenlau的hadoop dockefile](https://github.com/kiwenlau/hadoop-cluster-docker)。
-- 注意，hadoop的分布式是基于多机器的，而本github是通过docker来模拟实现的（单机多节点）。**其主要目的，是让大家通过看dockerfile了解基本的配置和搭建过程，说直白点，本dockerfile就是我认为的搭建流程的最简版。**
+- 注意，hadoop的分布式是基于多机器的，而本github是通过docker来模拟实现的（单机多节点）。**其主要目的，是让大家通过看dockerfile和相关shell了解基本的配置和搭建过程。说直白点，本dockerfile就是我认为的搭建流程的最简版。**
 # hadoop部署方式
 - 单机多节点。（本git的实现结果）
 - 多机多节点。
