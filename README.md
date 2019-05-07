@@ -10,7 +10,7 @@
     - 真正的分布式，指的是这一种。
 
 # 搭建流程
-- 搞清楚hadoop,hbase,hive,hue的定位关系
+- 搞清楚hadoop,hbase,hive,hue的定位和关系
     - Hadoop实现了一个分布式文件系统（Hadoop Distributed File System），简称HDFS。
     - hbase是运行于HDFS文件系统之上的nosql。
     - hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能，可以将sql语句转换为MapReduce任务进行运行。**hive映射的表既可以落在hdfs上，也可以落在hbase上。**
