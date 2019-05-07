@@ -2,7 +2,7 @@
 - hadoop搭建部分，使用了[kiwenlau的hadoop dockefile](https://github.com/kiwenlau/hadoop-cluster-docker)。
 - 注意，hadoop的分布式是基于多机器的，而本github是通过docker来模拟实现的（单机多节点）。**其主要目的，是让大家通过看dockerfile了解基本的配置和搭建过程，说直白点，本dockerfile就是我认为的搭建流程的最简版。**
 # hadoop部署方式
-- 单机多节点。（通过docker可快速实现）
+- 单机多节点。（本git的实现结果）
 - 多机多节点。
     - 鉴于网络特性，对于一类集群，单个机器至多只能存在该类集群的一个节点。
     - 因为存在多类集群，那么，单机上可以存在每一类集群的一个节点，即单机上可以存在多个不同类集群的节点。
@@ -44,28 +44,19 @@ https://github.com/sequenceiq/hadoop-docker
 
 ### 3 Nodes Hadoop Cluster
 
-##### 1. pull docker image
+##### prepare
 
 ```
 sudo docker pull kiwenlau/hadoop:1.0
-```
-
-##### 2. clone github repository
-
-```
-git clone https://github.com/kiwenlau/hadoop-cluster-docker
-```
-
-##### 3. create hadoop network
-
-```
 sudo docker network create --driver=bridge hadoop
+git clone git@github.com:playwolf719/hadoop-tool-dockerfile.git
+cd hadoop-tool-dockerfile
+sudo docker build -t myhh .
 ```
 
-##### 4. start container
+##### start container
 
 ```
-cd hadoop-cluster-docker
 sudo ./start-container.sh
 ```
 
@@ -75,61 +66,15 @@ sudo ./start-container.sh
 start hadoop-master container...
 start hadoop-slave1 container...
 start hadoop-slave2 container...
-root@hadoop-master:~# 
 ```
 - start 3 containers with 1 master and 2 slaves
 - you will get into the /root directory of hadoop-master container
 
-##### 5. start hadoop
+##### start hadoop
 
 ```
+docker exec -it hadoop-master bash
 ./start-service.sh
 ```
 
-##### 6. run wordcount
-
-```
-./run-wordcount.sh
-```
-
-**output**
-
-```
-input file1.txt:
-Hello Hadoop
-
-input file2.txt:
-Hello Docker
-
-wordcount output:
-Docker    1
-Hadoop    1
-Hello    2
-```
-
-### Arbitrary size Hadoop cluster
-
-##### 1. pull docker images and clone github repository
-
-do 1~3 like section A
-
-##### 2. rebuild docker image
-
-```
-sudo ./resize-cluster.sh 5
-```
-- specify parameter > 1: 2, 3..
-- this script just rebuild hadoop image with different **slaves** file, which pecifies the name of all slave nodes
-
-
-##### 3. start container
-
-```
-sudo ./start-container.sh 5
-```
-- use the same parameter as the step 2
-
-##### 4. run hadoop cluster 
-
-do 5~6 like section A
 
