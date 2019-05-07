@@ -15,14 +15,14 @@
     - hbase是运行于HDFS文件系统之上的nosql。
     - hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能，可以将sql语句转换为MapReduce任务进行运行。**hive映射的表既可以落在hdfs上，也可以落在hbase上。**
     - hue是支持多种数据库或数据仓库（包括hive）的web界面。
-- 搭建步骤。（基本和参考教程的顺序一致）
+- 搭建步骤。（基本和下面的参考教程的顺序一致，大家可以参考教程其中的细节）
     1. hadoop
     2. hbase
     3. hive
     4. hive与hbase和hdfs的整合
     5. hue
     6. hue与hive的整合
-# 主要参考教程
+# 主要参考教程（该部分是我搭建时，参考的教程，基本都是简易版本。）
 - hadoop分布式简易安装教程
 https://blog.csdn.net/Evankaka/article/details/51612437
 - 写的比较好的，hbase分布式教程。
@@ -40,6 +40,8 @@ https://blog.csdn.net/maomaosi2009/article/details/45648829
 https://github.com/kiwenlau/hadoop-cluster-docker
 - hadoop镜像。（该镜像仅供参考）
 https://github.com/sequenceiq/hadoop-docker
+- hue镜像
+https://github.com/cloudera/hue/tree/master/tools/docker/hue
 
 
 ### 3 Nodes Hadoop Cluster
