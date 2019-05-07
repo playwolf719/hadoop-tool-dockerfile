@@ -1,6 +1,8 @@
 # 重要tip
+- [项目git地址](https://github.com/playwolf719/hadoop-tool-dockerfile)
 - hadoop搭建部分，使用了[kiwenlau的hadoop dockefile](https://github.com/kiwenlau/hadoop-cluster-docker)。
 - 注意，hadoop的分布式是基于多机器的，而本github是通过docker来模拟实现的（单机多节点）。**其主要目的，是让大家通过看dockerfile和相关shell了解基本的配置和搭建过程。说直白点，本dockerfile就是我认为的搭建流程的最简版。**
+- hue需要自行搭建，不建议和hadoop放在一起，可以另行拿出来。
 
 # hadoop,hbase,hive,hue的定位和关系
   - Hadoop实现了一个分布式文件系统（Hadoop Distributed File System），简称HDFS。
