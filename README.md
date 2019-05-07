@@ -45,6 +45,7 @@ https://github.com/sequenceiq/hadoop-docker
 - hue镜像
 https://github.com/cloudera/hue/tree/master/tools/docker/hue
 
+# 具体操作流程
 
 ### 3 Nodes Hadoop Cluster
 
